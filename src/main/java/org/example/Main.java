@@ -10,6 +10,21 @@ public class Main {
         int opcion;
         do {
             opcion = menuPrincipal();
+
+            if (opcion == 1) {
+                mostrarEstado();
+            }
+
+            if (opcion == 2) {
+                if (saciedad < 10) {
+                    saciedad += 5; // ERROR 1: Sumem 5 en lloc de 3
+                    if (saciedad > 10) saciedad = 10;
+                    diversion -= 1;
+                } else {
+                    System.out.println("No tengo hambre");
+                }
+            }
+
         } while (opcion != 0);
     }
 
