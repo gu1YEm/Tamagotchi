@@ -2,6 +2,10 @@ package org.example;
 import java.util.Scanner;
 
 public class Main {
+    static int saciedad = 6;
+    static int energia = 6;
+    static int diversion = 6;
+
     public static void main(String[] args) {
         int opcion;
         do {
@@ -32,5 +36,24 @@ public class Main {
             }
         } while (opcion < 0 || opcion > 4);
         return opcion;
+    }
+
+    private static void mostrarEstado() {
+        System.out.println("Saciedad: " + saciedad + " | Energia: " + energia + " | Diversion: " + diversion);
+
+        if (saciedad == 0 || energia == 0 || diversion == 0) {
+            System.out.println("(-_-) Game Over");
+            System.out.println("Fin del juego!");
+            System.exit(0);
+        } else if (diversion <= 4) {
+            System.out.println("(-,-) Estoy aburrido / ¡Juega conmigo!");
+        } else if (energia <= 4) {
+            System.out.println("(-_-) Zzz   (Cansado)");
+        } else if (saciedad <= 4) {
+            System.out.println(" ( . . )");
+            System.out.println(" / |x| \\   ¡Tengo hambre!");
+        } else {
+            System.out.println("  (^_^) ¡Estoy feliz!");
+        }
     }
 }
