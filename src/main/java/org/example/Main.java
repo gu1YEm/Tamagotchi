@@ -31,7 +31,7 @@ public class Main {
                     diversion += 3;
                     if (diversion > 10) diversion = 10;
                     saciedad -= 1;
-                    energia -= 1;
+                    energia -= 2;
                     mostrarEstado();
                 } else {
                     System.out.println("Ahora no me apetece jugar");
@@ -40,7 +40,7 @@ public class Main {
 
             if (opcion == 4) {
                 if (energia < 10) {
-                    energia += 3;
+                    energia += 5;
                     if (energia > 10) energia = 10;
                     saciedad -= 3;
                     diversion -= 2;
