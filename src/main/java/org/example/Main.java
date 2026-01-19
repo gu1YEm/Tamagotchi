@@ -17,9 +17,10 @@ public class Main {
 
             if (opcion == 2) {
                 if (saciedad < 10) {
-                    saciedad += 5; // ERROR 1: Sumem 5 en lloc de 3
+                    saciedad += 3;
                     if (saciedad > 10) saciedad = 10;
                     diversion -= 1;
+                    mostrarEstado();
                 } else {
                     System.out.println("No tengo hambre");
                 }
