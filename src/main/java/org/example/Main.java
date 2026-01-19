@@ -26,6 +26,30 @@ public class Main {
                 }
             }
 
+            if (opcion == 3) {
+                if (diversion < 10) {
+                    diversion += 3;
+                    if (diversion > 10) diversion = 10;
+                    saciedad -= 1;
+                    energia -= 1;
+                    mostrarEstado();
+                } else {
+                    System.out.println("Ahora no me apetece jugar");
+                }
+            }
+
+            if (opcion == 4) {
+                if (energia < 10) {
+                    energia += 3;
+                    if (energia > 10) energia = 10;
+                    saciedad -= 3;
+                    diversion -= 2;
+                    mostrarEstado();
+                } else {
+                    System.out.println("No tengo sueño");
+                }
+            }
+
         } while (opcion != 0);
     }
 
@@ -57,7 +81,7 @@ public class Main {
     private static void mostrarEstado() {
         System.out.println("Saciedad: " + saciedad + " | Energia: " + energia + " | Diversion: " + diversion);
 
-        if (saciedad == 0 || energia == 0 || diversion == 0) {
+        if (saciedad <= 0 || energia <= 0 || diversion <= 0) { // Canviat a <=0 per seguretat
             System.out.println("(-_-) Game Over");
             System.out.println("Fin del juego!");
             System.exit(0);
